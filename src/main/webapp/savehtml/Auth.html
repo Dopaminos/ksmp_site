@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизация</title>
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <style>
+    body {
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar .navbar-brand {
+      color: #ffffff;
+    }
+
+    .jumbotron {
+      background-color: #343a40;
+      color: #ffffff;
+    }
+
+    .jumbotron h1,
+    .jumbotron .lead {
+      color: #ffffff;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #ffffff;
+    }
+
+    footer p {
+      color: #ffffff;
+    }
+
+    .container-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-auth {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+    }
+
+    /* Added styles */
+    .form-auth h1.display-4,
+    .form-auth p.lead {
+      color: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.jsp">Ресторан грузинской кухни</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.jsp">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Menu.jsp">Меню</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Contact.jsp">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Auth.html">Авторизация</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End of Navbar -->
+  <!-- Jumbotron -->
+  <header class="jumbotron jumbotron-fluid text-white text-center">
+    <div class="container-flex">
+      <form class="form-auth" action="authenticate.php" method="POST">
+        <h1 class="display-4" style="text-emphasis-color: #000000;">Авторизация</h1>
+        <p class="lead">Пожалуйста, введите ваше имя пользователя и пароль</p>
+        <div class="form-group">
+          <input type="text" class="form-control" name="nickname" placeholder="Имя пользователя" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="login" placeholder="Логин" required>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Пароль" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Войти</button>
+      </form>
+    </div>
+  </header>
+  <!-- End of Jumbotron -->
+  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container text-center">
+      <p class="m-0">Ресторан грузинской кухни &copy; 2023</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- End of Footer -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
