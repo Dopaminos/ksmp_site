@@ -77,10 +77,9 @@
   <section>
     <h2 class="text-center">Вход в систему</h2>
     <form>
-      <div class="form-group" >
+      <div class="form-group">
         <label for="loginInput">Логин:</label>
-        <input type="text" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="loginInput" name="login" required="true"
-               value="<%= authBean.getLogin() %>"/>
+        <input type="text" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="loginInput" name="login" required="true" pattern="[A-Za-z0-9]+" title="Только английские символы и цифры" value="<%= authBean.getLogin() %>"/>
       </div>
       <div class="form-group">
         <label for="passwordInput">Пароль:</label>
@@ -128,6 +127,30 @@
   <!-- /.container -->
 </footer>
 
+<script>
+  function validateLogin() {
+    var login = document.getElementById("loginInput").value;
+    // Проверка наличия только английских символов и цифр
+    var loginPattern = /^[A-Za-z0-9]+$/;
+    if (!loginPattern.test(login)) {
+      alert("Логин должен содержать только английские символы и цифры.");
+      return false;
+    }
+    return true;
+  }
+
+  function validatePassword() {
+    var password = document.getElementById("passwordInput").value;
+    // Проверка минимальной длины пароля
+    if (password.length < 8) {
+      alert("Пароль должен содержать минимум 8 символов.");
+      return false;
+    }
+    return true;
+  }
+
+</script>
+
 <!-- Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -135,6 +158,8 @@
   function updateValues() {
     document.getElementById("login").textContent = document.getElementById("loginInput").value;
     document.getElementById("password").textContent = document.getElementById("passwordInput").value;
+    validateLogin();
+    validatePassword();
   }
 </script>
 </body>
