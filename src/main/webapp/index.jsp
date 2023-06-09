@@ -39,7 +39,7 @@
           <a class="nav-link" href="Auth.jsp">Авторизация</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Registration.html">Регистрация</a>
+          <a class="nav-link" href="Register.jsp">Регистрация</a>
         </li>
       </ul>
     </div>

@@ -11,44 +11,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Регистрация</title>
+    <title>Авторизация</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        .form-register {
-            max-width: 400px;
-            width: 100%;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 5px;
-        }
-    </style>
+        .form-control-sm {
+            height: 30px;
+            font-size: 14px;
+        }</style>
 </head>
-<body>
-<form class="form-register" id="registerForm" action="" method="post">
-    <h1 class="display-4" style="color: #000000;">Регистрация</h1>
-    <p class="lead">Пожалуйста, заполните регистрационную форму</p>
-    <div class="form-group">
-        <input type="text" class="form-control" id="nicknameInput" name="nickname" placeholder="Никнейм" required="true" value="<%= registerBean.getNickname() %>" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" id="loginInput" name="login" placeholder="Логин" required="true" value="<%= registerBean.getLogin() %>" />
-    </div>
-    <div class="form-group">
-        <input type="email" class="form-control" id="emailInput" name="email" placeholder="Email" required="true" value="<%= registerBean.getEmail() %>" />
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Пароль" required="true" value="<%= registerBean.getPassword() %>" />
-    </div>
-    <input type="button" value="Зарегистрироваться" class="btn btn-primary" onclick="updateValues()" />
-</form>
+<body style="background-color: #ffffff6e">
 
-<div>
-    <h2>Введенные данные:</h2>
-    <p>Никнейм: <span id="nickname"></span></p>
-    <p>Логин: <span id="login"></span></p>
-    <p>Email: <span id="email"></span></p>
-    <p>Пароль: <span id="password"></span></p>
-</div>
+<!-- Навигационная панель -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Гамарджобо</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.jsp">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Menu.jsp">Меню</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUs.jsp">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.jsp">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
+<!-- Содержимое страницы -->
+<main class="text-center" style="background-color: #ffffff6e;">
+    <br>
+    <br>
+    <h1 class="text-center">Регистрация</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section>
+        <h2 class="text-center">Вход в систему</h2>
+        <form>
+            <div class="form-group" >
+                <label for="nicknameInput">Никнейм:</label>
+                <input type="text" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="nicknameInput" name="nickname" required="true"
+                       value="<%= registerBean.getNickname() %>"/>
+            </div>
+            <div class="form-group">
+                <label for="loginInput">Логин:</label>
+                <input type="login" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="loginInput" name="login" required="true"
+                       value="<%=registerBean.getLogin() %>"/>
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Емаил:</label>
+                <input type="email" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="emailInput" name="email" required="true"
+                       value="<%= registerBean.getEmail() %>"/>
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Пароль:</label>
+                <input type="password" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="passwordInput" name="password" required="true"
+                       value="<%= registerBean.getPassword() %>"/>
+            </div>
+            <br>
+            <input type="button" value="Войти" class="btn btn-primary" onclick="updateValues()" />
+            <div>
+                <h2>Введенные данные:</h2>
+                <p>Никнейм: <span id="nickname"></span></p>
+                <p>Логин: <span id="login"></span></p>
+                <p>Емаил: <span id="email"></span></p>
+                <p>Пароль: <span id="password"></span></p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </form>
+    </section>
+</main>
+<!-- Подвал страницы -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Ресторан грузинской кухни &copy; 2023</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
 <script>
     // Function to update the values in the <div> element
     function updateValues() {

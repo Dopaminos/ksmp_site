@@ -1,10 +1,10 @@
-<%@page import="com.example.demo3.RegisterBean" pageEncoding="utf-8" %>
-<%! RegisterBean registerBean; %>
+<%@page import="com.example.demo3.AuthBean" pageEncoding="utf-8" %>
+<%! AuthBean authBean; %>
 
 <%
   // Create or retrieve the RegisterBean object
-  if (registerBean == null) {
-    registerBean = new RegisterBean();
+  if (authBean == null) {
+   authBean = new AuthBean();
   }
 %>
 
@@ -59,40 +59,52 @@
 <main class="text-center" style="background-color: #ffffff6e;">
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
   <h1 class="text-center">Авторизация</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <section>
     <h2 class="text-center">Вход в систему</h2>
     <form>
       <div class="form-group" >
         <label for="loginInput">Логин:</label>
         <input type="text" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="loginInput" name="login" required="true"
-               value="<%= registerBean.getLogin() %>"/>
+               value="<%= authBean.getLogin() %>"/>
       </div>
       <div class="form-group">
         <label for="passwordInput">Пароль:</label>
         <input type="password" style="width: 200px; text-align:center; margin-left: auto; margin-right: auto;" class="form-control" id="passwordInput" name="password" required="true"
-               value="<%= registerBean.getPassword() %>"/>
+               value="<%= authBean.getPassword() %>"/>
       </div>
       <br>
-      <button type="submit" class="btn btn-primary">Войти</button>
+      <input type="button" value="Войти" class="btn btn-primary" onclick="updateValues()" />
+      <div>
+        <h2>Введенные данные:</h2>
+        <p>Логин: <span id="login"></span></p>
+        <p>Пароль: <span id="password"></span></p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </form>
   </section>
-  <div class="brchiki))" style="margin-top: fill"; margin-bottom: fill;> </div>
 </main>
-
 <!-- Подвал страницы -->
 <footer class="py-3 bg-dark">
   <div class="container">
@@ -103,6 +115,12 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
-
+<script>
+  // Function to update the values in the <div> element
+  function updateValues() {
+    document.getElementById("login").textContent = document.getElementById("loginInput").value;
+    document.getElementById("password").textContent = document.getElementById("passwordInput").value;
+  }
+</script>
 </body>
 </html>
