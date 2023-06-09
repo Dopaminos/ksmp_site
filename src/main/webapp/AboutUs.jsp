@@ -31,22 +31,25 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.jsp">Главная</a>
+            <a class="nav-link" href="index.jsp" style="color: #ffffff">Главная</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Menu.jsp">Меню</a>
+            <a class="nav-link" href="Menu.jsp" style="color: #ffffff">Меню</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="AboutUs.jsp">О нас</a>
+            <a class="nav-link" href="AboutUs.jsp" style="color: #ffffff">О нас</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Contact.jsp">Контакты</a>
+            <a class="nav-link" href="Contact.jsp" style="color: #ffffff">Контакты</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Auth.jsp">Авторизация</a>
+            <a class="nav-link" href="Auth.jsp" style="color: #ffffff">Авторизация</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Register.jsp">Регистрация</a>
+            <a class="nav-link" href="Register.jsp" style="color: #ffffff">Регистрация</a>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link btn btn-primary" onclick="toggleColor()">Сменить цвет</button>
           </li>
         </ul>
       </div>
@@ -95,4 +98,53 @@
 <!-- Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
 </body>
+<script>
+  var isDarkMode = true; // Variable to track the current color scheme
+  var excludeElements = document.querySelectorAll('.navbar, footer');
+
+  function toggleColor() {
+    var body = document.querySelector('body');
+    var allTextElements = document.querySelectorAll('body *');
+
+    // Toggle the color scheme
+    isDarkMode = !isDarkMode;
+
+    if (isDarkMode) {
+      // Apply dark mode styles
+      body.style.backgroundColor = '#333333';
+      excludeElements.forEach(function (element) {
+        element.style.color = ''; // Reset the color of excluded elements
+      });
+
+      allTextElements.forEach(function (element) {
+        if (!isDescendantOf(element, excludeElements)) {
+          element.style.color = '#ffffff';
+        }
+      });
+    } else {
+      // Apply light mode styles
+      body.style.backgroundColor = '#ffffff';
+      excludeElements.forEach(function (element) {
+        element.style.color = ''; // Reset the color of excluded elements
+      });
+
+      allTextElements.forEach(function (element) {
+        if (!isDescendantOf(element, excludeElements)) {
+          element.style.color = '#000000';
+        }
+      });
+    }
+  }
+
+  // Helper function to check if an element is a descendant of any element in a list
+  function isDescendantOf(element, elements) {
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].contains(element)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+</script>
 </html>
