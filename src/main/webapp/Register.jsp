@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Авторизация</title>
+    <title>Регистрация</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"/>
     <!-- Font Awesome -->
@@ -48,6 +48,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Contact.jsp">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Auth.jsp">Авторизация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Register.jsp">Регистрация</a>
                     </li>
                 </ul>
             </div>
